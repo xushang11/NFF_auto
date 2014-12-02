@@ -55,8 +55,8 @@ logfile =           nff_test_home + 'nff_test.log'
 yum_repod =         '/etc/yum.repos.d/'
 
 # command fail or success description suffix
-fail_desc = 'failed ~~'
-success_desc = 'successfully ~~'
+fail_desc = '***FAILD***'
+success_desc = '***SUCCESSFUL***'
 
 ###############################################################################
 # MariaDB bundle specific variables:
@@ -135,14 +135,15 @@ default_socket = '/var/run/mariadb/mysqld.sock'
 Enable_replication = True
 ###############################################################################
 
-
-
 ###############################################################################
 # UTILITY FUNCTIONS
 ###############################################################################
 ###############################################################################
 # Log the specified message string
 ###############################################################################
+
+class Logger:
+    pass
 
 def log(msg, filename = '', debug_level = LOG_INFO):
     
@@ -623,6 +624,7 @@ def replication_mariadb(master='', slave=''):
 def replhealth_mariadb(host=''):
     
     try:
+        pass
 
     except Exception, exc:
         log( traceback.format_exc(), debug_level = LOG_ERROR)
